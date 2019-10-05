@@ -1,10 +1,12 @@
 const canvasWidth = 2400;
 const canvasHeight = 800;
 
+// should be dynamic in the future
 itemWidth = 30;
 itemHeight = 30;
 
-colorCombs = {};
+materialColors = {};
+purposeColors = {};
 
 const colors = [
 '#F44336',
@@ -264,8 +266,6 @@ const colors = [
 '#000000',
 ];
 
-const purposeColor = [];
-
 // load the json file from local
 d3.json("data/trash.json").then(gotData);
 
@@ -335,11 +335,25 @@ function processData(data){
               }
           }
           // to get item/material  - color combs
-          if (k == "item" || k == "material" || k == "purpose"){
           // if (k == "item"){
-            if (!(datum[k] in Object.keys(colorCombs))) {
-              colorCombs[datum[k]] = colors[ i + j * 2 ];
-              console.log(colorCombs);
+          // // if (k == "item"){
+          //   if (!(datum[k] in Object.keys(colorCombs))) {
+          //     [datum[k]] = colors[ i + j * 2 ];
+          //     console.log(colorCombs);
+          //   }
+          // }
+          if (k == "material"){
+          // if (k == "item"){
+            if (!(datum[k] in Object.keys(materialColors))) {
+              materialColors[datum[k]] = colors[ i + j * 2 ];
+              console.log(materialColors);
+            }
+          }
+          if (k == "purpose"){
+          // if (k == "item"){
+            if (!(datum[k] in Object.keys(purposeColors))) {
+              purposeColors[datum[k]] = colors[ i + j * 2 ];
+              console.log(purposeColors);
             }
           }
         }
@@ -492,12 +506,12 @@ function getItemsFill(datum, i){
 
 function getMaterialFill(datum){
     let material = datum.material;
-    return colorCombs[material];
+    return materialColors[material];
 }
 
 function getPurposeFill(datum){
     let purpose = datum.purpose;
-    return colorCombs[purpose];
+    return purposeColors[purpose];
 }
 
 function getTypeFill(datum){
