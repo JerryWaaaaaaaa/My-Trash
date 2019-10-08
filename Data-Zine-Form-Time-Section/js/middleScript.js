@@ -5,10 +5,17 @@ const paddingY = 30;
 const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 let dayPadding = 30;
-let dayWidth = Math.floor( ( ( canvasWidth - paddingX * 2 - dayPadding * 8 ) / 7 ) );
-let locationWidth = Math.floor( dayWidth / 6 );
 
-let itemWidth = locationWidth;
+let dayWidth = ( ( canvasWidth - paddingX * 2 - dayPadding * 8 ) / 7 );
+let dayHeight = canvasHeight - paddingY * 2;
+
+let locationWidth =  dayWidth / 6;
+let locationHeight = dayHeight;
+
+let timeWidth = locationWidth;
+let timeHeight = locationHeight / 3;
+
+let itemWidth = timeWidth;
 let itemHeight = itemWidth;
 
 let picWidth = itemWidth - 26;
@@ -65,13 +72,20 @@ d3.json("data/trash.json").then(gotData);
 // 7 days a week
 let days = new Array(7);
 
-// in each day, there are six locations, each location has several items
+// in each day, there are six locations
+// each location has three time slots
+// each time slot has several items
 for (let i = 0; i < days.length; i ++ ){
-  days[i] = new Array(6);
-  for(let j = 0; j < days[i].length; j ++ ){
-    days[i][j] = new Array();
-  }
+    days[i] = new Array(6);
+    for(let j = 0; j < days[i].length; j ++ ){
+        days[i][j] = new Array(3);
+        for (let k = 0; k < days[i][j].length; k ++ ) {
+            days[i][j][k] = new Array();
+        }
+    }
 }
+
+console.log(days);
 
 //console.log(days);
 
@@ -90,33 +104,10 @@ function processData(data){
     for (let i = 0; i < data.length; i ++ ){
         // get datum for each item
         let datum = data[i];
-        let index = getLocation(datum);
-
-        switch(datum["day"]){
-            case "Monday":
-                days[0][index].push(datum);
-                break;
-            case "Tuesday":
-                days[1][index].push(datum);
-                break;
-            case "Wednesday":
-                days[2][index].push(datum);
-                break;
-            case "Thursday":
-                days[3][index].push(datum);
-                break;
-            case "Friday":
-                days[4][index].push(datum);
-                break;
-            case "Saturday":
-                days[5][index].push(datum);
-                break;
-            case "Sunday":
-                days[6][index].push(datum);
-                break;
-            default:
-                break;
-        }
+        let dayIndex = getDayIndex(datum);
+        let locIndex = getLocIndex(datum);
+        let timeIndex = getTimeIndex(datum);
+        days[dayIndex][locIndex][timeIndex].push(datum);
 
         if (!(datum["purpose"] in purposeColors)) {
             purposeColors[datum.purpose] = colors[colorI];
@@ -132,13 +123,6 @@ function processData(data){
     console.log(keyMatchingColors);
 
     colorItemWidth = ( canvasWidth/2 - paddingY * 2 ) / purposeKeys.length;
-
-    // sort each day/location based on their purpose
-    for (let i = 0; i < days.length; i ++ ) {
-        for (let j = 0; j < days[i].length; j ++ ) {
-
-        }
-    }
 
 }
 
@@ -170,7 +154,10 @@ function visualizeData(days){
 
       let locationGroups = dayGroups.selectAll(".locations").data(function(d,i,j) { return d; }).enter().append("g").attr("class", getLocationsClass).attr("transform", getLocationsPos);
 
-      let items = locationGroups.selectAll(".items").data(function(d,i,j) { return d; }).enter().append("g").attr("class", getItemsClass).attr("transform", getItemsPos);
+      let timeGroups = locationGroups.selectAll(".times").data(function(d, i, j){ return d; }).enter().append("g").attr("class", "times")
+                                        .attr("transform", function(d, i, j){ return "translate(0 , " + timeHeight * i + ")"; } );
+
+      let items = timeGroups.selectAll(".items").data(function(d,i,j) { return d; }).enter().append("g").attr("class", getItemsClass).attr("transform", getItemsPos);
 
       // create text for locations
       locationGroups.append("text")
@@ -184,6 +171,7 @@ function visualizeData(days){
                       .attr("font-size", "10px")
                       .attr("transform", "rotate(90)")
       ;
+
 
       // create material shape & color
       items.append("rect")
@@ -272,10 +260,27 @@ function visualizeData(days){
 
 // for group class and positioning
 
-function getLocation(datum){
-    let location = datum["location"];
-    //console.log(datum, location);
-    switch(location){
+function getDayIndex(datum){
+    switch(datum["day"]){
+        case "Monday":
+            return 0;
+        case "Tuesday":
+            return 1;
+        case "Wednesday":
+            return 2;
+        case "Thursday":
+            return 3;
+        case "Friday":
+            return 4;
+        case "Saturday":
+            return 5;
+        case "Sunday":
+            return 6;
+    }
+}
+
+function getLocIndex(datum){
+    switch(datum["location"]){
         case "home":
             return 0; // as an index
         case "cafe/restaurant":
@@ -289,6 +294,13 @@ function getLocation(datum){
         default:
             return 5;
     }
+}
+
+function getTimeIndex(datum){
+    let time = parseInt(datum.time.split(":")[0]);
+    if (time >= 0 && time <= 12) { return 0;}
+    else if (time > 12 && time < 19) { return 1; }
+    else { return 2 }
 }
 
 function getDaysClass(data, i, j){
