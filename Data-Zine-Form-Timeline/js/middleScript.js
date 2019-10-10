@@ -4,6 +4,9 @@ const paddingX = 30;
 const paddingY = 30;
 const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
+const foreGroundTextColor = "#202020";
+const backgroundColor = "#f4f4f4";
+
 let dayPadding = 30;
 
 let dayWidth = ( ( canvasWidth - paddingX * 2 - dayPadding * 8 ) / 7 );
@@ -15,7 +18,7 @@ let locationHeight = dayHeight;
 let itemWidth = locationWidth;
 let itemHeight = itemWidth;
 
-let picWidth = itemWidth - 26;
+let picWidth = itemWidth - 18;
 let picHeight = picWidth;
 
 let materialColors = {paper: "#dec9c4", plastic: "#75979c", wood: "#D1BA84"};
@@ -151,7 +154,7 @@ function visualizeData(days){
                                       .attr("id", "chart")
                                       .attr("width", 2400)
                                       .attr("height", 800)
-                                      .style("background-color", "white")
+                                      .style("background-color", backgroundColor)
       ;
 
       // create Day divs
@@ -162,7 +165,7 @@ function visualizeData(days){
                       .text(function(d, i){ return dayNames[i]; })
                       .attr("x", 0)
                       .attr("y", 0)
-                      .attr("fill", "black")
+                      .attr("fill", foreGroundTextColor)
                       .attr("font-family", "Courier New")
                       .attr("font-size", "14px")
       ;
@@ -177,8 +180,8 @@ function visualizeData(days){
                         if (d.length > 0) { return d[0].location; }
                       })
                       .attr("x", 0)
-                      .attr("y", 15)
-                      .attr("fill", "black")
+                      .attr("y", 10)
+                      .attr("fill", foreGroundTextColor)
                       .attr("font-family", "Courier New")
                       .attr("font-size", "10px")
                       .attr("transform", "rotate(90)")
@@ -203,24 +206,24 @@ function visualizeData(days){
       // ;
 
       // createTimeBackground
-      items.append("rect")
-                .attr("x", -6)
-                .attr("y", -6)
-                .attr("width", picWidth + 12)
-                .attr("height", picHeight + 12)
-                .attr("fill", getFillByTime)
-      ;
+      // items.append("rect")
+      //           .attr("x", -6)
+      //           .attr("y", -6)
+      //           .attr("width", picWidth + 12)
+      //           .attr("height", picHeight + 12)
+      //           .attr("fill", getFillByTime)
+      // ;
 
       // create frame
-      items.append("rect")
-                .attr("x", -1)
-                .attr("y", -1)
-                .attr("width", picWidth + 2)
-                .attr("height", picHeight + 2)
-                // .attr("rx", 2)
-                // .attr("ry", 2)
-                .attr("fill", "white")
-      ;
+      // items.append("rect")
+      //           .attr("x", -1)
+      //           .attr("y", -1)
+      //           .attr("width", picWidth + 2)
+      //           .attr("height", picHeight + 2)
+      //           // .attr("rx", 2)
+      //           // .attr("ry", 2)
+      //           .attr("fill", "white")
+      // ;
 
       // create purpose shape and color, and position them based on time
 
@@ -233,11 +236,11 @@ function visualizeData(days){
       ;
 
       // create item image
-      items.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg);
+      items.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
 
       items.selectAll(".svgPos").attr("transform", function(){ return "translate(" + picWidth/2*-1 + "," + picHeight*-1 + ")" } );
 
-      items.selectAll(".svgSize").attr("transform", "scale(0.085)");
+      items.selectAll(".svgSize").attr("transform", "scale(0.11)");
 
       // create color instructions
 
@@ -255,9 +258,9 @@ function visualizeData(days){
 
       purposeColorGroups.append("text")
                               .text(function(d, i){ return purposeKeys[i]; })
-                              .attr("x", 10)
+                              .attr("x", 0)
                               .attr("y", picHeight + 10)
-                              .attr("fill", "black")
+                              .attr("fill", foreGroundTextColor)
                               .attr("font-family", "Courier New")
                               .attr("font-size", "10px")
       ;
