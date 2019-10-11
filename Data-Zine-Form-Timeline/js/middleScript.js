@@ -7,7 +7,7 @@ const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 const foreGroundTextColor = "#202020";
 const backgroundColor = "#f4f4f4";
 
-let dayPadding = 30;
+let dayPadding = 60;
 
 let dayWidth = ( ( canvasWidth - paddingX * 2 - dayPadding * 8 ) / 7 );
 let dayHeight = canvasHeight - paddingY * 2;
@@ -15,10 +15,12 @@ let dayHeight = canvasHeight - paddingY * 2;
 let locationWidth =  dayWidth / 6;
 let locationHeight = dayHeight;
 
-let itemWidth = locationWidth;
+let itemsGroupPadding = 5;
+
+let itemWidth = locationWidth - itemsGroupPadding;
 let itemHeight = itemWidth;
 
-let picWidth = itemWidth - 18;
+let picWidth = itemWidth - 10;
 let picHeight = picWidth;
 
 let materialColors = {paper: "#dec9c4", plastic: "#75979c", wood: "#D1BA84"};
@@ -185,44 +187,6 @@ function visualizeData(days){
                       .attr("transform", "rotate(90)")
       ;
 
-      // create material shape & color
-      // items.append("rect")
-      //                 .attr("x", -5)
-      //                 .attr("y", -5)
-      //                 .attr("width", 3)
-      //                 .attr("height", picHeight + 10)
-      //                 .attr("fill", getMaterialFill)
-      // ;
-
-      // create type(throwaway) shape & color
-      // items.append("rect")
-      //                 .attr("x", picWidth+1)
-      //                 .attr("y", picHeight+1)
-      //                 .attr("width", 4)
-      //                 .attr("height", 4)
-      //                 .attr("fill", getTypeFill)
-      // ;
-
-      // createTimeBackground
-      // items.append("rect")
-      //           .attr("x", -6)
-      //           .attr("y", -6)
-      //           .attr("width", picWidth + 12)
-      //           .attr("height", picHeight + 12)
-      //           .attr("fill", getFillByTime)
-      // ;
-
-      // create frame
-      // items.append("rect")
-      //           .attr("x", -1)
-      //           .attr("y", -1)
-      //           .attr("width", picWidth + 2)
-      //           .attr("height", picHeight + 2)
-      //           // .attr("rx", 2)
-      //           // .attr("ry", 2)
-      //           .attr("fill", "white")
-      // ;
-
       // create purpose shape and color, and position them based on time
 
       items.append("rect")
@@ -238,7 +202,7 @@ function visualizeData(days){
 
       items.selectAll(".svgPos").attr("transform", function(){ return "translate(" + picWidth/2*-1 + "," + picHeight*-1 + ")" } );
 
-      items.selectAll(".svgSize").attr("transform", "scale(0.11)");
+      items.selectAll(".svgSize").attr("transform", "scale(0.1)");
 
       // create color instructions
 
@@ -322,7 +286,7 @@ function getDaysPos(data, i){
 }
 
 function getLocationsPos(data, i){
-    let x = i * itemWidth;
+    let x = i * itemWidth + (i + 1) * itemsGroupPadding;
     let y = 20
     return "translate(" + x + "," + y + ")";
 }
@@ -337,7 +301,7 @@ function getItemsClass(datum){
 
 function getItemsPos(datum, i){
     x = 0;
-    y = i * (itemHeight - 10);
+    y = i * itemHeight ;
     return "translate(" + x + "," + y + ")";
 }
 

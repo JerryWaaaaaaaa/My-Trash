@@ -85,7 +85,6 @@ function visualizeData(data){
     // create chart
     let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).attr("fill", backgroundColor);
 
-
     itemWidth = itemHeight = ( canvasHeight - paddingY * (items.length - 3) ) / items.length;
     itemPerRow = Math.floor( (canvasWidth - paddingX * 2) / itemWidth );
     console.log("itemPerRow is" + itemPerRow);
@@ -99,11 +98,11 @@ function visualizeData(data){
                        .attr("transform", getItemGroupPos)
     ;
 
-    // create text for days
+    // create text for itemsGroup
     itemsGroups.append("text")
                     .text(function(d, i){ return d[0]["item"]; })
                     .attr("x", 0)
-                    .attr("y", 0)
+                    .attr("y", -itemsGroupPadding/2)
                     .attr("fill", foreGroundTextColor)
                     .attr("font-family", "Courier New")
                     .attr("font-size", "14px")
