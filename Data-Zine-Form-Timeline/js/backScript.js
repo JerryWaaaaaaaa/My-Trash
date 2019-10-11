@@ -2,12 +2,38 @@ const canvasWidth = 1200;
 const canvasHeight = 800;
 const paddingX = 30;
 const paddingY = 30;
-const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const itemsGroupPadding = 5;
 
+let itemWidth;
 let itemHeight;
+let itemPerRow;
 
 const foreGroundTextColor = "#202020";
 const backgroundColor = "#f4f4f4";
+
+let purposeColors = {
+    breakfast: "#c77ac2",
+    coffee: "#aae0e8",
+    lunch: "#ebaf25",
+    tea: "#b82e66",
+    dinner: "#0c4e6b",
+    beverage: "#afafa0",
+    breakfast: "#c77ac2",
+    brunch: "#d79890",
+    cleaning: "#7bb160",
+    coffee: "#aae0e8",
+    dinner: "#0c4e6b",
+    grocery: "#7cc6bd",
+    lunch: "#ebaf25",
+    milk: "#c79ab4",
+    shopping: "#998f92",
+    sketch: "#507ac3",
+    snack: "#81cde9",
+    tea: "#b82e66",
+    water: "#be5c3e"
+}
+
+let yIndex = 0;
 
 // put the same item into an array
 let items = new Array();
@@ -33,24 +59,12 @@ function processData(data){
         items[itemIndex].push(datum);
     }
 
-    // get rid of the empty arrays
-    // for (let i = 0; i < items.length; i ++ ){
-    //     for (let j = 0; j < items[i].length; j ++ ){
-    //         console.log(items[i].length, items[i][j]);
-    //         if ( items[i][j].length == 0 ) {
-    //             items[i].splice(j,1);
-    //             console.log("sliced!");
-    //             j = j - 1;
-    //         }
-    //     }
-    // }
-
     // sort them based on purpose
     for ( let i = 0; i < items.length; i ++ ) {
-        let startIndex = 0;
         for (let j = 0; j < items[i].length - 1; j ++ ) {
-            while( startIndex <= (items[i].length - 1) ){
-                for (let k = startIndex; k < items[i].length - 1; k ++ ) {
+            let endIndex = items[i].length - 1;
+            while( endIndex > 1 ){
+                for (let k = 0; k < endIndex; k ++ ) {
                     purposeIndex = getPurposeIndex(items[i][k]);
                     nextPurposeIndex = getPurposeIndex(items[i][k+1]);
                     if (purposeIndex > nextPurposeIndex){
@@ -59,12 +73,11 @@ function processData(data){
                         items[i][k] = temp;
                     }
                 }
-                startIndex += 1;
+                endIndex -= 1;
             }
         }
     }
 
-    console.log(items);
 }
 
 function visualizeData(data){
@@ -73,15 +86,55 @@ function visualizeData(data){
     let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).attr("fill", backgroundColor);
 
 
-    itemHeight = ( canvasHeight - paddingY * 2 ) / items.length;
-    // create groups for each item
-    let itemsGroups = chart.selectAll("items").data(data).enter().append("g").attr("class", "items").attr("transform", function(d, i){ return "translate(0, " + itemHeight * i + ")" });
+    itemWidth = itemHeight = ( canvasHeight - paddingY * (items.length - 3) ) / items.length;
+    itemPerRow = Math.floor( (canvasWidth - paddingX * 2) / itemWidth );
+    console.log("itemPerRow is" + itemPerRow);
+    // itemHeight = ( ( canvasWidth * 2 - paddingX * 2 - itemsGroupPadding * 8 ) / 7 ) / 6;
+    let picWidth = itemHeight - 10;
+    let picHeight = picWidth;
 
-    let itemGroup = itemsGroups.selectAll("item").data(function(d){ return d }).enter().append("g").attr("transform", function(d, i){ return "translate(" + itemHeight * i + ", 0)" });;
+    // create groups for each item
+    let itemsGroups = chart.selectAll("items").data(data).enter().append("g").attr("class", "items")
+                    // .attr("transform", function(d, i){ return "translate(" + paddingX + "," + (itemHeight * i + 10 * (i + 1)) + ")" })
+                       .attr("transform", getItemGroupPos)
+    ;
+
+    // create text for days
+    itemsGroups.append("text")
+                    .text(function(d, i){ return d[0]["item"]; })
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("fill", foreGroundTextColor)
+                    .attr("font-family", "Courier New")
+                    .attr("font-size", "14px")
+    ;
+
+    let itemGroup = itemsGroups.selectAll("item").data(function(d){ return d }).enter().append("g")
+          .attr("transform", getItemPos)
+    ;
 
     // draw elements in the itemGroup
+    itemGroup.append("rect")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", picWidth)
+                    .attr("height", picHeight)
+                    .attr("fill", getPurposeFill)
+    ;
+
+    // create item image
+    itemGroup.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
+
+    itemGroup.selectAll(".svgPos").
+        attr("transform", function(){ return "translate(" + itemHeight/2*-0.8 + "," + picHeight*-1 + ")" } )
+    ;
+
+    itemGroup.selectAll(".svgSize").attr("transform", "scale(0.1)");
 
 }
+
+
+// for process data
 
 function getItemIndex(datum){
     switch (datum["item"]) {
@@ -141,6 +194,32 @@ function fillTheArray(array, endIndex){
     }
 }
 
+// for drawing
+
+function getItemGroupPos(datum, i, j){
+    console.log(datum);
+    let lineNeeded = Math.floor(datum.length / itemPerRow);
+    let xValue = paddingX;
+    let yValue = (yIndex + i) * itemHeight + (yIndex + i + 1) * itemsGroupPadding + paddingY;
+    yIndex += lineNeeded;
+    return "translate(" + xValue + ", " + yValue + ")";
+}
+
+function getItemPos(datum, i){
+    let x, y;
+    let lineIndex = Math.floor(i / itemPerRow);
+    if ( i < itemPerRow ) {
+        x = itemWidth * i;
+        y = (itemHeight + itemsGroupPadding) * lineIndex;
+    }
+    else{
+        x = itemWidth * (i - itemPerRow * lineIndex);
+        y = (itemHeight + itemsGroupPadding) * lineIndex;
+    }
+
+    return "translate(" + x + "," + y + ")";
+}
+
 function getItemSvg(datum){
     item = datum.item;
     // console.log(item);
@@ -172,6 +251,11 @@ function getItemSvg(datum){
         case "straw":
             return straw;
     }
+}
+
+function getPurposeFill(datum){
+    let purpose = datum.purpose;
+    return purposeColors[purpose];
 }
 
 // svgs

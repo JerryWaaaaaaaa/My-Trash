@@ -113,8 +113,6 @@ function processData(data){
     purposeKeys = Object.keys(purposeColors);
     purposeKeys.forEach(function(d, i){ keyMatchingColors[i] = purposeColors[d]; });
     colorItemWidth = ( canvasWidth/2 - paddingY * 2 ) / purposeKeys.length;
-    console.log(purposeKeys);
-    // console.log(keyMatchingColors);
 
     // sort the items based on time
     for (let i = 0; i < days.length; i ++ ){
@@ -142,7 +140,7 @@ function processData(data){
         }
     }
 
-    console.log(days);
+    console.log(purposeColors);
 
 }
 
