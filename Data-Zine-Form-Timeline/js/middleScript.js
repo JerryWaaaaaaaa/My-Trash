@@ -154,7 +154,7 @@ function visualizeData(days){
                                       .attr("id", "chart")
                                       .attr("width", 2400)
                                       .attr("height", 800)
-                                      .style("background-color", backgroundColor)
+                                      .style("background-color", "#ffffff")
       ;
 
       // create Day divs

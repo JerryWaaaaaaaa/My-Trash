@@ -1,3 +1,4 @@
+// ----------- constants for the canvas ----------
 const canvasWidth = 1200;
 const canvasHeight = 800;
 const paddingX = 30;
@@ -83,7 +84,7 @@ function processData(data){
 function visualizeData(data){
 
     // create chart
-    let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).attr("fill", backgroundColor);
+    let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).style("background-color", "#ffffff");
 
     itemWidth = itemHeight = ( canvasHeight - paddingY * (items.length - 3) ) / items.length;
     itemPerRow = Math.floor( (canvasWidth - paddingX * 2) / itemWidth );
@@ -94,7 +95,6 @@ function visualizeData(data){
 
     // create groups for each item
     let itemsGroups = chart.selectAll("items").data(data).enter().append("g").attr("class", "items")
-                    // .attr("transform", function(d, i){ return "translate(" + paddingX + "," + (itemHeight * i + 10 * (i + 1)) + ")" })
                        .attr("transform", getItemGroupPos)
     ;
 
