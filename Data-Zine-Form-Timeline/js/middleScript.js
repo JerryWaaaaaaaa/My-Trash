@@ -200,13 +200,11 @@ function visualizeData(days){
       // create item image
       items.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
 
-
       items.selectAll(".svgPos").attr("transform", function(){ return "translate(" + picWidth/2*-1 + "," + picHeight*-1 + ")" } );
 
       items.selectAll(".svgSize").attr("transform", "scale(0.1)");
 
       // create color instructions
-
       let purposeColorGroups = chart.selectAll(".purposeColors").data(purposeKeys).enter().append("g")
                                       .attr("transform", function(d, i){ return "translate(" + (colorItemWidth * i + paddingX)+ "," + (canvasHeight - paddingY * 2) + ")"; })
       ;

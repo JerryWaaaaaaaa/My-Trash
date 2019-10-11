@@ -137,34 +137,20 @@ function visualizeData(data){
 
 function getItemIndex(datum){
     switch (datum["item"]) {
-        case "bottle":
-            return 0;
-        case "chopstick":
-            return 1;
-        case "cup":
-            return 2;
-        case "cup sleeve":
-            return 3;
-        case "food package":
-            return 4;
-        case "package":
-            return 5;
-        case "paper bag":
-            return 6;
-        case "plastic bag":
-            return 7;
-        case "fork":
-            return 8;
-        case "spoon":
-            return 9;
-        case "straw":
-            return 10;
-        case "printing paper":
-            return 11;
-        case "tissue":
-            return 12;
-        default:
-            return 13;
+        case "bottle": return 0;
+        case "chopstick": return 1;
+        case "cup": return 2;
+        case "cup sleeve": return 3;
+        case "food package": return 4;
+        case "package": return 5;
+        case "paper bag": return 6;
+        case "plastic bag": return 7;
+        case "fork": return 8;
+        case "spoon": return 9;
+        case "straw": return 10;
+        case "printing paper": return 11;
+        case "tissue": return 12;
+        default: return 13;
     }
 }
 
