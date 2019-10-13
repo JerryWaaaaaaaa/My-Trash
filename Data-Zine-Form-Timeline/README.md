@@ -6,18 +6,18 @@ This is my Data-Zine Project. It is the visual representation of all kinds of tr
 ## Cover
 The cover page is designed to be an introduction of the project background.
 The bottom of the cover page is an instruction of the meaning of each color and icon.
-!(exports/cover.png)
+![](exports/cover.png)
 
 ## Middle Spread
 The middle spread is designed to show the quantity of daily trash I make along the week.
 The middle spread arranges the trash based on time. The trash are divided into seven days. In each day, they are categorized based on locations. In each location, they are arranged based on the time they are created.
-!(exports/middle01.png)
-!(exports/middle02.png)
+![](exports/middle01.png)
+![](exports/middle02.png)
 
 ## Back
 The back is designed to show the total quantity of each item I made in the past three weeks.
 The back arranges the trash based on item. For each item, the items with the same purpose are grouped together.
-!(exports/back.png)
+![](exports/back.png)
 
 ## Difficulties
 - Embed images in my zine.
