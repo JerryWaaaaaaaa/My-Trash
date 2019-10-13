@@ -29,6 +29,22 @@ let purposeColors = {
     water: "#be5c3e"
 }
 
+let itemList = [
+"bottle",
+"chopstick",
+"cup",
+"cup sleeve",
+"food package",
+"package",
+"paper bag",
+"plastic bag",
+"fork",
+"spoon",
+"straw",
+"printing paper",
+"tissue"
+]
+
 // svgs
 let bottle = `
 <g>
@@ -495,44 +511,29 @@ let tissue = `<g>
 	</g>
 </g>`
 
-let itemList = [
-"bottle",
-"chopstick",
-"cup",
-"cup sleeve",
-"food package",
-"package",
-"paper bag",
-"plastic bag",
-"fork",
-"spoon",
-"straw",
-"printing paper",
-"tissue"
-]
+
 
 let purposeKeys = Object.keys(purposeColors);
 let keyMatchingColors = [];
 purposeKeys.forEach(function(d, i){ keyMatchingColors[i] = purposeColors[d]; });
 let colorItemWidth = ( canvasWidth - paddingY * 4 ) / purposeKeys.length;
-let picWidth = colorItemWidth - 20;
-let picHeight = 20;
+let picWidth = colorItemWidth - 44;
+let picHeight = picWidth;
 
 let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height",canvasHeight).attr("fill", backgroundColor);
 
-let purposeColorGroups = chart.selectAll(".purposeColors").data(purposeKeys).enter().append("g")
-                                .attr("transform", function(d, i){ return "translate(" + (colorItemWidth * i + paddingX * 2)+ "," + (paddingY * 2) + ")"; })
+let purposeColorGroups = chart.append("g").attr("class", "purposeColorGroups").attr("transform","translate(0,0)");
+let purposeColorGroup = purposeColorGroups.selectAll(".purposeColors").data(purposeKeys).enter().append("g")
+                                .attr("transform", function(d, i){ return "translate(" + (colorItemWidth * i + paddingX * 2)+ "," + (paddingY * 4) + ")"; })
 ;
-
-purposeColorGroups.append("rect")
+purposeColorGroup.append("rect")
                         .attr("x", 0)
                         .attr("y", 0)
                         .attr("width", picWidth)
                         .attr("height", picHeight)
                         .attr("fill", function(d, i){ return keyMatchingColors[i]; })
 ;
-
-purposeColorGroups.append("text")
+purposeColorGroup.append("text")
                         .text(function(d, i){ return purposeKeys[i]; })
                         .attr("x", 0)
                         .attr("y", picHeight + 10)
@@ -541,13 +542,22 @@ purposeColorGroups.append("text")
                         .attr("font-size", "10px")
 ;
 
-
-let itemWidth = ( canvasWidth - paddingY * 4 ) / itemList.length;
-let itemGroups = chart.selectAll(".item").data(itemList).enter().append("g")
-                                .attr("transform", function(d, i){ return "translate(" + (itemWidth * i + paddingX * 2)+ "," + (paddingY * 0) + ")"; })
+let itemWidth = ( canvasWidth - paddingY * 3 ) / itemList.length;
+let itemGroups = chart.append("g").attr("class", "itemGroups").attr("transform","translate(0,0)");
+let itemGroup = itemGroups.selectAll(".item").data(itemList).enter().append("g")
+                                .attr("transform", function(d, i){ return "translate(" + (itemWidth * i + paddingX * 2)+ "," + (paddingY * 5) + ")"; })
 ;
-
-itemGroups.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
+itemGroup.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
+itemGroup.selectAll(".svgPos").attr("transform", function(){ return "translate(" + itemWidth/5*-1 + "," + 0 + ")" } );
+itemGroup.selectAll(".svgSize").attr("transform", "scale(0.1)");
+itemGroup.append("text")
+                        .text(function(d, i){ return itemList[i]; })
+                        .attr("x", 0)
+                        .attr("y", itemWidth * 0.8)
+                        .attr("fill", foreGroundTextColor)
+                        .attr("font-family", "Courier New")
+                        .attr("font-size", "10px")
+;
 
 
 

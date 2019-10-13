@@ -205,6 +205,7 @@ function visualizeData(days){
       items.selectAll(".svgSize").attr("transform", "scale(0.1)");
 
       // create color instructions
+      /*
       let purposeColorGroups = chart.selectAll(".purposeColors").data(purposeKeys).enter().append("g")
                                       .attr("transform", function(d, i){ return "translate(" + (colorItemWidth * i + paddingX)+ "," + (canvasHeight - paddingY * 2) + ")"; })
       ;
@@ -225,6 +226,7 @@ function visualizeData(days){
                               .attr("font-family", "Courier New")
                               .attr("font-size", "10px")
       ;
+      */
 
 }
 
