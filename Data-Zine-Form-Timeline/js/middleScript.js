@@ -4,8 +4,8 @@ const paddingX = 30;
 const paddingY = 30;
 const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-const foreGroundTextColor = "#202020";
-const backgroundColor = "#f4f4f4";
+const backgroundColor = "#0c0c0c";
+const foreGroundTextColor = "#FFFFFF";
 
 let dayPadding = 60;
 
@@ -154,7 +154,7 @@ function visualizeData(days){
                                       .attr("id", "chart")
                                       .attr("width", 2400)
                                       .attr("height", 800)
-                                      .style("background-color", "#ffffff")
+                                      .style("background-color", backgroundColor)
       ;
 
       // create Day divs
@@ -194,11 +194,11 @@ function visualizeData(days){
                       .attr("y", 0)
                       .attr("width", picWidth)
                       .attr("height", picHeight)
-                      .attr("fill", getPurposeFill)
+                      .attr("fill", "none")
       ;
 
       // create item image
-      items.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
+      items.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", getPurposeFill);
 
       items.selectAll(".svgPos").attr("transform", function(){ return "translate(" + picWidth/2*-1 + "," + picHeight*-1 + ")" } );
 

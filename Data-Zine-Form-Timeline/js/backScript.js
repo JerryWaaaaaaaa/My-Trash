@@ -9,8 +9,11 @@ let itemWidth;
 let itemHeight;
 let itemPerRow;
 
-const foreGroundTextColor = "#202020";
-const backgroundColor = "#f4f4f4";
+// const foreGroundTextColor = "#202020";
+// const backgroundColor = "#FFFFFF";
+
+const backgroundColor = "#0c0c0c";
+const foreGroundTextColor = "#FFFFFF";
 
 let purposeColors = {
     breakfast: "#c77ac2",
@@ -84,7 +87,7 @@ function processData(data){
 function visualizeData(data){
 
     // create chart
-    let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).style("background-color", "#ffffff");
+    let chart = d3.select("#container").append("svg").attr("width", canvasWidth).attr("height", canvasHeight).style("background-color", backgroundColor);
 
     itemWidth = itemHeight = ( canvasHeight - paddingY * (items.length - 3) ) / items.length;
     itemPerRow = Math.floor( (canvasWidth - paddingX * 2) / itemWidth );
@@ -118,11 +121,11 @@ function visualizeData(data){
                     .attr("y", 0)
                     .attr("width", picWidth)
                     .attr("height", picHeight)
-                    .attr("fill", getPurposeFill)
+                    .attr("fill", "none")
     ;
 
     // create item image
-    itemGroup.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", foreGroundTextColor);
+    itemGroup.append("g").attr("class", "svgPos").append("g").attr("class", "svgSize").html(getItemSvg).attr("fill", getPurposeFill);
 
     itemGroup.selectAll(".svgPos").
         attr("transform", function(){ return "translate(" + itemHeight/2*-0.8 + "," + picHeight*-1 + ")" } )

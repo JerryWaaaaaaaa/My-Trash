@@ -4,8 +4,8 @@ const canvasHeight = 800;
 const paddingX = 30;
 const paddingY = 30;
 
-const foreGroundTextColor = "#202020";
-const backgroundColor = "#f4f4f4";
+const backgroundColor = "#0c0c0c";
+const foreGroundTextColor = "#FFFFFF";
 
 let purposeColors = {
     breakfast: "#c77ac2",

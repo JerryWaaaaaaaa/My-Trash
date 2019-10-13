@@ -11,8 +11,7 @@ The bottom of the cover page is an instruction of the meaning of each color and 
 ## Middle Spread
 The middle spread is designed to show the quantity of daily trash I make along the week.
 The middle spread arranges the trash based on time. The trash are divided into seven days. In each day, they are categorized based on locations. In each location, they are arranged based on the time they are created.
-![](exports/middle01.png)
-![](exports/middle02.png)
+![](exports/middle.png)
 
 ## Back
 The back is designed to show the total quantity of each item I made in the past three weeks.
