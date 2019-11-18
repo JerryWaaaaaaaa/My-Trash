@@ -1,0 +1,220 @@
+date,day,time,item,material,type,purpose,location
+10-Sep,Tuesday,9:30,food package,paper,residual ,breakfast,cafe/restaurant
+10-Sep,Tuesday,10:10,cup,plastic,residual ,coffee,cafe/restaurant
+10-Sep,Tuesday,10:10,straw,paper,residual ,coffee,cafe/restaurant
+10-Sep,Tuesday,13:20,food package,paper,residual ,lunch,cafe/restaurant
+10-Sep,Tuesday,13:20,food package,plastic,residual ,lunch,cafe/restaurant
+10-Sep,Tuesday,13:20,tissue,paper,residual ,lunch,cafe/restaurant
+10-Sep,Tuesday,17:02,bottle,plastic,recyclable,tea,familyMart/store
+10-Sep,Tuesday,18:02,tissue,paper,residual ,dinner,school
+10-Sep,Tuesday,18:02,tissue,paper,residual ,dinner,school
+10-Sep,Tuesday,18:05,food package,plastic,residual ,tea,school
+10-Sep,Tuesday,22:01,food package,paper,recyclable,tea,school
+10-Sep,Tuesday,23:28,tissue,paper,residual ,cleaning,school
+10-Sep,Tuesday,23:28,tissue,paper,residual ,cleaning,home
+11-Sep,Wednesday,7:50,tissue,paper,residual ,breakfast,cafe/restaurant
+11-Sep,Wednesday,7:50,tissue,paper,residual ,breakfast,cafe/restaurant
+11-Sep,Wednesday,8:40,food package,paper,residual ,breakfast,cafe/restaurant
+11-Sep,Wednesday,9:30,cup,plastic,residual ,coffee,cafe/restaurant
+11-Sep,Wednesday,9:30,straw,paper,residual ,coffee,cafe/restaurant
+11-Sep,Wednesday,10:54,tissue,paper,residual ,cleaning,home
+11-Sep,Wednesday,13:22,bottle,plastic,residual ,tea,school
+11-Sep,Wednesday,12:40,tissue,paper,residual ,cleaning,school
+11-Sep,Wednesday,12:40,cup,paper,residual ,tea,school
+11-Sep,Wednesday,16:02,food package,plastic,residual ,snack,school
+11-Sep,Wednesday,18:24,tissue,paper,residual ,cleaning,school
+11-Sep,Wednesday,18:24,tissue,paper,residual ,cleaning,school
+11-Sep,Wednesday,22:20,bottle,plastic,recyclable,milk,home
+11-Sep,Wednesday,0:40,tissue,paper,residual ,cleaning,home
+11-Sep,Wednesday,0:40,tissue,paper,residual ,cleaning,home
+11-Sep,Wednesday,0:40,tissue,paper,residual ,cleaning,home
+11-Sep,Wednesday,0:40,tissue,paper,residual ,cleaning,home
+12-Sep,Thursday,9:26,food package,paper,residual ,breakfast,familyMart/store
+12-Sep,Thursday,9:26,food package,paper,residual ,breakfast,familyMart/store
+12-Sep,Thursday,9:26,tissue,paper,residual ,breakfast,familyMart/store
+12-Sep,Thursday,10:27,fork,wood,residual ,snack,familyMart/store
+12-Sep,Thursday,10:27,straw,paper,residual ,coffee,familyMart/store
+12-Sep,Thursday,12:28,tissue,paper,residual ,lunch,restaurant stay
+12-Sep,Thursday,18:24,cup sleeve,paper,recyclable,coffee,familyMart/store
+12-Sep,Thursday,21:48,paper bag,paper,residual ,snack,familyMart/store
+12-Sep,Thursday,21:48,cup,plastic,recyclable,snack,familyMart/store
+13-Sep,Friday,12:40,tissue,paper,residual ,cleaning,cafe/restaurant
+13-Sep,Friday,12:40,tissue,paper,residual ,cleaning,cafe/restaurant
+13-Sep,Friday,12:40,tissue,plastic,residual ,cleaning,cafe/restaurant
+13-Sep,Friday,12:40,tissue,plastic,residual ,cleaning,cafe/restaurant
+13-Sep,Friday,12:40,package,plastic,residual ,cleaning,cafe/restaurant
+13-Sep,Friday,14:57,bottle,plastic,residual ,bottled water,school
+13-Sep,Friday,16:20,cup sleeve,paper,residual ,snack,school
+13-Sep,Friday,16:20,cup,paper,residual ,snack,school
+13-Sep,Friday,17:36,tissue,paper,residual ,cleaning,subway station
+13-Sep,Friday,17:36,tissue,paper,residual ,cleaning,subway station
+13-Sep,Friday,17:36,tissue,paper,residual ,cleaning,subway station
+13-Sep,Friday,19:47,food package,plastic,residual ,dinner,school
+13-Sep,Friday,19:47,food package,plastic,residual ,dinner,school
+13-Sep,Friday,19:47,chopstick,wood,residual ,dinner,school
+13-Sep,Friday,21:40,tissue,paper,residual ,cleaning,home
+13-Sep,Friday,21:40,tissue,paper,residual ,cleaning,home
+13-Sep,Friday,21:40,tissue,paper,residual ,cleaning,home
+13-Sep,Friday,21:40,tissue,paper,residual ,cleaning,home
+13-Sep,Friday,21:40,tissue,paper,residual ,cleaning,home
+13-Sep,Friday,21:40,chopstick,wood,residual ,snack,home
+14-Sep,Saturday,2:30,tissue,paper,residual ,cleaning,home
+14-Sep,Saturday,10:30,chopstick,wood,residual ,brunch,home
+14-Sep,Saturday,2:56,cup sleeve,paper,residual ,tea,school
+14-Sep,Saturday,2:56,cup,paper,residual ,tea,school
+14-Sep,Saturday,12:37,food package,plastic,residual ,lunch,familyMart/store
+14-Sep,Saturday,12:37,food package,plastic,residual ,lunch,familyMart/store
+14-Sep,Saturday,12:37,food package,plastic,residual ,lunch,familyMart/store
+14-Sep,Saturday,18:30,package,plastic,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,18:30,tissue,paper,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,18:30,tissue,paper,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,18:30,tissue,paper,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,18:30,tissue,paper,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,18:30,tissue,paper,residual ,dinner,cafe/restaurant
+14-Sep,Saturday,19:48,bottle,plastic,recyclable,tea,familyMart/store
+14-Sep,Saturday,22:28,plastic bag,plastic,recyclable,grocery,takeout
+14-Sep,Saturday,23:40,tissue,paper,residual ,cleaning,home
+14-Sep,Saturday,23:40,tissue,paper,residual ,cleaning,home
+15-Sep,Sunday,9:47,food package,paper,residual ,breakfast,cafe/restaurant
+15-Sep,Sunday,10:03,cup,paper,residual ,coffee,familyMart/store
+15-Sep,Sunday,10:03,cup sleeve,paper,residual ,coffee,familyMart/store
+15-Sep,Sunday,14:22,plastic bag,plastic ,residual ,lunch,takeout
+15-Sep,Sunday,14:22,chopstick,wood,residual ,lunch,takeout
+15-Sep,Sunday,14:22,spoon,plastic,residual ,lunch,takeout
+15-Sep,Sunday,14:22,food package,plastic,residual ,lunch,takeout
+15-Sep,Sunday,14:22,food package,plastic,residual ,lunch,takeout
+15-Sep,Sunday,14:22,food package,paper,residual ,lunch,takeout
+15-Sep,Sunday,20:06,tissue,paper,residual ,dinner,cafe/restaurant
+16-Sep,Monday,9:30,food package,paper,residual ,breakfast,cafe/restaurant
+16-Sep,Monday,10:10,cup,paper,residual ,coffee,cafe/restaurant
+16-Sep,Monday,13:17,plastic bag,plastic,residual ,lunch,cafe/restaurant
+16-Sep,Monday,13:17,food package,plastic,residual ,lunch,cafe/restaurant
+16-Sep,Monday,13:17,tissue,paper,residual ,lunch,cafe/restaurant
+16-Sep,Monday,13:48,bottle,plastic,residual ,tea,school
+16-Sep,Monday,18:57,tissue,paper,residual ,dinner,cafe/restaurant
+17-Sep,Tuesday,9:54,chopstick,wood,residual ,breakfast,home
+17-Sep,Tuesday,9:58,tissue,paper,residual ,cleaning,home
+17-Sep,Tuesday,9:58,tissue,paper,residual ,cleaning,home
+17-Sep,Tuesday,14:05,bottle,plastic,residual ,beverage,office
+17-Sep,Tuesday,16:30,printing paper,paper,residual ,sketch,office
+17-Sep,Tuesday,16:30,printing paper,paper,residual ,sketch,office
+17-Sep,Tuesday,16:30,printing paper,paper,residual ,sketch,office
+17-Sep,Tuesday,16:30,printing paper,paper,residual ,sketch,office
+17-Sep,Tuesday,20:57,tissue,paper,residual ,dinner,cafe/restaurant
+18-Sep,Wednesday,9:50,food package,plastic,residual ,breakfast,familyMart/store
+18-Sep,Wednesday,9:50,cup,plastic,residual ,breakfast,familyMart/store
+18-Sep,Wednesday,9:50,cup sleeve,plastic,residual ,breakfast,familyMart/store
+18-Sep,Wednesday,10:20,food package,plastic,residual ,snack,school
+18-Sep,Wednesday,15:40,food package,paper,residual ,lunch,school
+18-Sep,Wednesday,18:30,tissue,paper,residual ,dinner,school
+18-Sep,Wednesday,18:30,tissue,paper,residual ,dinner,school
+18-Sep,Wednesday,22:38,bottle,plastic,recyclable,water,familyMart/store
+18-Sep,Wednesday,23:08,bottle,plastic,residual ,water,home
+18-Sep,Wednesday,23:49,tissue,paper,residual ,cleaning,home
+18-Sep,Wednesday,23:49,tissue,paper,residual ,cleaning,home
+19-Sep,Thursday,9:06,food package,paper,residual ,breakfast,subway station
+19-Sep,Thursday,9:06,tissue,paper,residual ,breakfast,subway station
+19-Sep,Thursday,11:30,bottle,plastic,residual ,tea,office
+19-Sep,Thursday,12:30,tissue,paper,residual ,cleaning,office
+19-Sep,Thursday,12:30,tissue,paper,residual ,cleaning,office
+19-Sep,Thursday,14:40,bottle,plastic,residual ,tea,office
+19-Sep,Thursday,15:26,food package,plastic,residual ,snack,office
+19-Sep,Thursday,15:26,food package,plastic,residual ,snack,office
+19-Sep,Thursday,17:48,printing paper,paper,residual ,sketch,office
+19-Sep,Thursday,19:06,tissue,paper,residual ,dinner,cafe/restaurant
+19-Sep,Thursday,22:47,bottle,plastic,residual ,tea ,familyMart/store
+19-Sep,Thursday,23:55,tissue ,paper,residual ,cleaning,home 
+19-Sep,Thursday,23:55,tissue ,paper,residual ,cleaning,home 
+20-Sep,Friday ,10:04,food package,paper,residual ,breakfast,cafe/restaurant
+20-Sep,Friday ,10:04,tissue,paper,residual ,breakfast,cafe/restaurant
+20-Sep,Friday,12:20,bottle,plastic,residual ,tea ,office
+20-Sep,Friday,15:20,bottle,plastic,residual ,tea ,office
+20-Sep,Friday,15:48,food package,plastic,residual ,snack,office
+20-Sep,Friday,15:48,food package,plastic,residual ,snack,office
+20-Sep,Friday ,18:08,tissue,paper,residual ,dinner,school
+20-Sep,Friday ,21:57,food package,plastic,residual ,snack,school
+20-Sep,Friday ,21:57,food package,plastic,residual ,snack,school
+20-Sep,Friday ,21:57,food package,plastic,residual ,snack,school
+20-Sep,Friday ,22:48,plastic bag,plastic,residual ,shopping,home
+20-Sep,Friday ,22:48,plastic bag,plastic,residual ,shopping,home
+20-Sep,Friday ,22:48,plastic bag,paper,residual ,shopping,home
+20-Sep,Friday ,22:48,plastic bag,paper,residual ,shopping,home
+21-Sep,Saturday,10:30,plastic bag,paper,residual ,shopping,home
+21-Sep,Saturday,10:30,plastic bag,paper,residual ,shopping,home
+21-Sep,Saturday,12:40,food package,plastic,residual ,breakfast,familyMart/store
+21-Sep,Saturday,13:50,bottle,plastic,recyclable,tea,familyMart/store
+21-Sep,Saturday,13:20,food package,plastic,residual ,lunch,takeout
+21-Sep,Saturday,13:20,food package,plastic,residual ,lunch,takeout
+21-Sep,Saturday,13:20,food package,plastic,residual ,lunch,takeout
+21-Sep,Saturday,13:20,food package,plastic,residual ,lunch,takeout
+21-Sep,Saturday,13:20,chopstick,wood,residual ,lunch,takeout
+21-Sep,Saturday,14:18,straw,paper,residual ,tea,cafe/restaurant
+21-Sep,Saturday,15:04,bottle,plastic,recyclable,water,school
+21-Sep,Saturday,20:48,food package,paper,residual ,snack,takeout
+21-Sep,Saturday,20:48,food package,paper,residual ,snack,takeout
+21-Sep,Saturday,20:48,food package,paper,residual ,snack,takeout
+21-Sep,Saturday,20:48,food package,paper,residual ,snack,takeout
+21-Sep,Saturday,20:48,cup,plastic,residual ,water,takeout
+21-Sep,Saturday,20:48,straw,plastic,residual ,water,takeout
+21-Sep,Saturday,20:48,tissue,paper,residual ,snack,takeout
+22-Sep,Sunday,8:22,tissue,paper,residual ,breakfast,cafe/restaurant
+22-Sep,Sunday ,9:04,cup,paper,residual ,breakfast,cafe/restaurant
+22-Sep,Sunday ,10:54,food package,paper,residual ,snack,office
+22-Sep,Sunday ,11:04,bottle,plastic,residual ,water,office
+22-Sep,Sunday ,13:20,tissue,paper,residual ,lunch,school
+22-Sep,Sunday ,15:30,cup,paper,residual ,snack,familyMart/store
+22-Sep,Sunday ,15:30,cup sleeve,paper,residual ,snack,familyMart/store
+22-Sep,Sunday,18:40,tissue,paper,residual ,dinner,cafe/restaurant
+22-Sep,Sunday,18:40,tissue,paper,residual ,dinner,cafe/restaurant
+22-Sep,Sunday,18:36,food package,paper,residual ,snack,familyMart/store
+22-Sep,Sunday,22:45,tissue,paper,residual ,cleaning,home
+22-Sep,Sunday,22:45,tissue,paper,residual ,cleaning,home
+23-Sep,Monday,9:30,food package,paper,residual ,breakfast,cafe/restaurant
+23-Sep,Monday,9:30,tissue,paper,residual ,breakfast,cafe/restaurant
+23-Sep,Monday,10:30,bottle,plastic,recyclable,tea,familyMart/store
+23-Sep,Monday,12:50,food package,plastic,residual ,lunch,familyMart/store
+23-Sep,Monday,12:50,food package,plastic,residual ,lunch,familyMart/store
+23-Sep,Monday,12:50,food package,plastic,residual ,lunch,familyMart/store
+23-Sep,Monday,12:50,chopstick,wood,residual ,lunch,familyMart/store
+23-Sep,Monday,12:50,tissue,paper,residual ,lunch,school
+23-Sep,Monday,14:48,cup,paper,residual ,snack,familyMart/store
+23-Sep,Monday,14:48,cup sleeve,paper,residual ,snack,familyMart/store
+23-Sep,Monday,18:30,tissue,paper,residual ,dinner,school
+23-Sep,Monday,19:20,cup,plastic,residual ,tea,cafe/restaurant
+24-Sep,Tuesday,9:20,food package,plastic,residual ,breakfast,familyMart/store
+24-Sep,Tuesday,9:20,tissue,paper,residual ,breakfast,familyMart/store
+24-Sep,Tuesday,10:04,bottle,plastic,recyclable,tea,familyMart/store
+24-Sep,Tuesday,12:30,tissue,paper,residual ,lunch,school
+24-Sep,Tuesday,14:30,food package,plastic,residual ,snack,office
+24-Sep,Tuesday,14:30,food package,plastic,residual ,snack,office
+24-Sep,Tuesday,16:04,bottle,plastic,residual ,tea,office
+24-Sep,Tuesday,19:46,food package,paper,residual ,dinner,cafe/restaurant
+24-Sep,Tuesday,19:46,chopstick,wood,residual ,dinner,cafe/restaurant
+24-Sep,Tuesday,19:46,food package,plastic,residual ,dinner,cafe/restaurant
+24-Sep,Tuesday,19:46,food package,plastic,residual ,dinner,cafe/restaurant
+24-Sep,Tuesday,19:46,cup,plastic,residual ,tea,cafe/restaurant
+24-Sep,Tuesday,19:46,straw,plastic,residual ,tea,cafe/restaurant
+25-Sep,Wednesday ,2:00,food package,plastic,residual ,snack,familyMart/store
+25-Sep,Wednesday ,2:00,food package,plastic,residual ,snack,familyMart/store
+25-Sep,Wednesday ,10:30,tissue,paper,residual ,cleaning ,home
+25-Sep,Wednesday ,11:30,tissue,paper,residual ,cleaning ,school
+25-Sep,Wednesday,11:40,tissue,paper,residual ,lunch,school
+25-Sep,Wednesday,14:30,tissue,paper,residual ,snack,school
+25-Sep,Wednesday,18:52,tissue,paper,residual ,dinner,school
+25-Sep,Wednesday,22:09,food package,plastic,residual ,snack,familyMart/store
+25-Sep,Wednesday,22:09,food package,plastic,residual ,snack,familyMart/store
+25-Sep,Wednesday,22:09,food package,plastic,residual ,snack,familyMart/store
+25-Sep,Wednesday,22:09,spoon,plastic,residual ,snack,familyMart/store
+26-Sep,Thursday,9:42,tissue,paper,residual ,breakfast,takeout
+26-Sep,Thursday,9:42,cup,paper,residual ,breakfast,takeout
+26-Sep,Thursday,9:42,food package,paper,residual ,breakfast,takeout
+26-Sep,Thursday,9:42,food package,paper,residual ,breakfast,takeout
+26-Sep,Thursday,9:42,food package,paper,residual ,breakfast,takeout
+26-Sep,Thursday,9:42,plastic bag,plastic,residual ,breakfast,takeout
+26-Sep,Thursday,12:30,food package,plastic,residual ,snack,barbor
+26-Sep,Thursday,13:36,food package,plastic,residual ,dinner,familyMart/store
+26-Sep,Thursday,13:36,food package,plastic,residual ,dinner,familyMart/store
+26-Sep,Thursday,13:36,plastic bag,plastic,residual ,dinner,familyMart/store
+26-Sep,Thursday,14:33,plastic bag,plastic,residual ,lunch,takeout
+26-Sep,Thursday,14:33,plastic bag,plastic,residual ,lunch,takeout
+26-Sep,Thursday,14:33,chopstick,wood,residual ,lunch,takeout
